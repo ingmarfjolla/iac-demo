@@ -5,6 +5,9 @@
   vars_files:
     - "../vault.yml"
   tasks:
+    - name: Pause for 5 minutes to build app cache
+      ansible.builtin.pause:
+        minutes: 5
     - name: Print the vault password
       ansible.builtin.debug:
         msg: testing
