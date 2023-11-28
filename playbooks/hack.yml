@@ -7,4 +7,11 @@
   tasks:
     - name: Print the vault password
       ansible.builtin.debug:
-        msg: System {{ test_this }} has gateway {{ ansible_default_ipv4.gateway }}
+        msg: testing
+    - name: Display runner contents
+      command: ls /runner/project
+      register: command_output
+
+    - name: Print to console
+      debug:
+        msg: "{{command_output.stdout}}"
