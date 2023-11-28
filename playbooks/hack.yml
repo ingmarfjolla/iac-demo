@@ -1,0 +1,10 @@
+- name: print vault passowrd
+  hosts: all
+  gather_facts: false
+  connection: local
+  vars_files:
+    - "../vault.yml"
+  tasks:
+    - name: Print the vault password
+      ansible.builtin.debug:
+        msg: System {{ test_this }} has gateway {{ ansible_default_ipv4.gateway }}
